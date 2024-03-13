@@ -1,0 +1,97 @@
+<div class="logo">
+    <a href="./index.html"><img src="./Resources/Sundown logo.svg" alt="" srcset=""></a>
+</div>
+<div class="menu">
+    <h4><a href="./work.html">Work</a></h4>
+    <h4><a href="./studio.html">Studio</a></h4>
+    <h4><a href="./contact.html">Contact</a></h4>
+</div>
+
+<style>
+    nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 1em;
+    }
+    .logo{
+        width: 10%;
+    }
+    nav img{
+        width: 100%;
+    }
+    nav .menu{
+        display: flex;
+        gap: 10px;
+    }
+    nav .menu h4{
+        font-weight: 400;
+        overflow: hidden;
+        border: 1px solid rgba(11,5,0,.2);
+        padding: 0.7em 1.5em;
+        border-radius: 5em;
+        display: flex;
+        align-items: center;
+        font-size: 0.48rem;
+        margin: 1em 0;
+        position: relative;
+        z-index: 4;
+        cursor: pointer;
+    }
+    nav .menu a{
+        text-decoration: none;
+        color: #0b0500;
+        z-index: 5;
+    }
+    nav .menu h4::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        bottom: -100%;
+        left: 0;
+        border-radius: 50%;
+        transition: all ease 0.3s;
+    }
+    nav .menu h4:hover::after{
+        bottom: 0;
+        border-radius: 5em;
+    }
+    nav .menu h4:hover a{
+        color: #fff;
+    }
+    ::-webkit-scrollbar{
+        width: 10px;
+        height: 250px;
+    }
+    ::-webkit-scrollbar-thumb{
+        width: 9px;
+        background-color: #fe340b;
+        border-radius: 1em;
+    }
+
+    @media (min-width : 770px) and (max-width : 990px){
+        nav{
+            padding: 2em 2em;
+        }
+        .logo{
+            width: 19%;
+        }
+        nav .menu h4{
+            font-size: 1.15rem;
+        }
+    }
+    @media (min-width : 991px) and (max-width : 1600px){
+        nav{
+            padding: 1.2em 1.2em;
+        }
+        .logo{
+            width: 14%;
+        }
+        nav .menu h4{
+            font-size: 0.68rem;
+        }
+    }
+    
+</style>

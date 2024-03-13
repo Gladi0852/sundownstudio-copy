@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="x-icon" href="./Resources/Sundown favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css files/contact.css">
+    <title>Contact Sundown Studio</title>
+</head>
+<body>
+    <section id="main">
+        <nav></nav>
+        <div id="page1">
+            <div class="header">
+                <div class="photo">
+                    <img src="./Resources/Sundown-Map.webp" alt="" srcset="">
+                </div>
+                <div class="header-content">
+                    <div class="content">
+                        <div class="content-container">
+                            <h1>LET'S WORK</h1>
+                        </div>
+                        <div class="content-container">
+                            <h1>TOGETHER</h1>
+                        </div>
+                        <!-- <h1>LET'S WORK</h1> -->
+                        <!-- <h1>TOGETHER</h1> -->
+                        <h6>
+                            <a href="mailto:pritambiswasmca@gmail.com" target="_blank">pritambiswasmca@gmail.com</a>
+                            <div class="drop-up" style="color: #000;">
+                                <i class="ri-arrow-drop-up-line"></i>
+                            </div>
+                            <hr>
+                            <div class="drop-down">
+                                <i class="ri-arrow-drop-down-line"></i>
+                            </div>
+                        </h6>
+                    </div>
+                    <div class="anime1">
+                        <div class="anime2"></div>
+                    </div>
+                    <div class="address">
+                        <div class="address-content">
+                            <h5>Roots in Greenpoint,Brooklyn</h5>
+                        </div>
+                        <div class="address-border"></div>
+                        <div class="address-content">
+                            <h5>Physical work across the US</h5>
+                        </div>
+                        <div class="address-border"></div>
+                        <div class="address-content">
+                            <h5>Digital work across the world</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div id="footer-page"></div> -->
+    <div id="footer">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module">
+        let navbar = document.querySelector('nav');
+        fetch('./navbar.html').then(res=>res.text()).then(data=>{navbar.innerHTML = data});
+        
+        let upBtn = document.querySelector(".drop-up")
+        let dwnBtn = document.querySelector(".drop-down")
+        let mailId = document.querySelector(".header-content .content h6 a")
+        
+        upBtn.addEventListener('click',()=>{
+            upBtn.style.color = "#000"
+            dwnBtn.style.color = "#A8A8A8"
+            mailId.style.top = "-20%"
+        })
+        dwnBtn.addEventListener('click',()=>{
+            dwnBtn.style.color = "#000"
+            upBtn.style.color = "#A8A8A8"
+            mailId.style.top = "15%"
+        })
+        let footerPage = document.querySelector("#footer");
+        
+        const footer = async() => {
+            let footerData = await fetch('./footer.html');
+            return footerData.text();
+        }
+        let footerData = await footer();
+        footerPage.innerHTML = footerData
+        footerPage.style.height = document.querySelector("footer").offsetHeight + 290 + "px"
+        window.addEventListener('resize',()=>{
+            footerPage.style.height = document.querySelector("footer").offsetHeight + "px"
+        })
+
+        var tl = gsap.timeline();
+        tl.from(".photo",{
+            delay : 0.5,
+            opacity : 0,
+            y : 200,
+            duration : 1
+        }).from(".content h1",{
+            opacity : 0,
+           yPercent : 100
+        }).from(".content h6 a,.content h6 .drop-up,.content h6 .drop-down,.content h6 hr",{
+            opacity : 0,
+            yPercent : 100
+        }).from(".anime1",{
+            opacity : 0,
+            duration : 0.5
+        }).from(".address-content h5",{
+            delay : 1,
+            opacity : 0,
+            duration : 0.5,
+        }).from(".address-border",{
+            opacity : 0,
+            xPercent : 0,
+            duration : 0.3
+        })
+
+    </script>
+</body>
+</html>

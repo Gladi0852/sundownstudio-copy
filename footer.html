@@ -1,0 +1,209 @@
+
+    <footer>
+        <div class="anime3-wrapper">
+            <div class="anime1"></div> 
+            <div class="anime2"></div> 
+            <div class="anime3"></div>    
+        </div>
+        <div class="wrapper">
+            <div class="headings">
+                <h4><a href="./work.html">Work</a></h4>
+                <h4><a href="./studio.html">Studio</a></h4>
+                <h4><a href="./contact.html">Contact</a></h4>
+            </div>
+            <div class="form">
+                <p>Get industry insights and creative inspiration straight to your inbox.</p>
+                <form action="" method="post">
+                    <input type="email" name="email" id="" placeholder="Email address" required>
+                    <button type="submit"><i class="ri-arrow-right-line"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./Resources/sundown-big.svg" alt="" srcset="">
+        </div>
+        <hr>
+        <div class="links">
+            <p>Copyright &#169; PritamBiswas</p>
+            <p><i class="ri-global-line"></i> West Bengal, IN</p>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <style>
+        footer{
+            position: fixed;
+            bottom: 0;
+            z-index: 6;
+            background-color: #000;
+            width: 100%;
+            color: #fff;
+            padding-top: 5.5em;
+            padding: 5.5em 1em 0 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+        footer .anime3-wrapper{
+            position: absolute;
+            top: -5%;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            z-index: 5;
+        }
+        footer .anime3-wrapper .anime1{
+            position: absolute;
+            top: 0;
+            left: -5%;
+            width: 0;
+            height: 0;
+            border-left: 30em solid #FE330A;
+            border-bottom: 8em solid transparent;
+            border-top: 8em solid #FE330A;
+            filter: blur(50px);
+            animation: animeWrapper3-anime1 3s linear infinite alternate;
+        }
+        footer .anime3-wrapper .anime2{
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            width: 100%;
+            height: 100%;
+            background-color: #FE330A;
+            filter: blur(80px);
+        }
+        footer .anime3-wrapper .anime3{
+            position: absolute;
+            right: -5%;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-right: 20em solid #FE330A;
+            border-bottom: 19em solid transparent;
+            border-top: 6em solid #FE330A;
+            filter: blur(50px);
+            animation: animeWrapper3-anime3 3s linear infinite alternate;
+
+        }
+        @keyframes animeWrapper3-anime1{
+            0%{
+                transform: rotate(0) translateY(0);
+            }
+            60%{
+                transform: rotate(10deg) translateY(0);
+            }
+            100%{
+                transform: rotate(10deg) translateY(-10%);
+            }
+        }
+        @keyframes animeWrapper3-anime3{
+            0%{
+                transform: rotate(5deg);
+            }
+            100%{
+                transform: rotate(-15deg);
+            }
+        }
+
+        footer .wrapper{
+            padding: 0 1.8em;
+            margin-bottom: 3.5em;
+            display: flex;
+            justify-content: space-between;
+            z-index: 6;
+        }
+        footer .wrapper .headings a{
+            text-decoration: none;
+            color: #fff;
+        }
+        footer .wrapper h4{
+            font-size: 0.9rem;
+            line-height: 1.3em;
+            font-weight: 700;
+        }
+        footer .wrapper h4 a:hover{
+            color: #ffffffa5;
+        }
+        footer .wrapper .form{
+            width: 22%;
+        }
+        footer .wrapper .form form input::placeholder{
+            color: #ffffffa0;
+        }
+        footer .wrapper .form p{
+            font-size: 0.6rem;
+            margin-bottom: 2em;
+        }
+        footer .wrapper .form form{
+            border-bottom: 1px solid rgba(239,234,227,.3);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer .wrapper .form form input{
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 0.5rem;
+            padding: 0.6em 0;
+        }
+        footer .wrapper .form form button{
+            background: transparent;
+            color: #fff;
+            border: none;
+            outline: none;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            cursor: pointer;
+            transform: translateY(-50%);
+            font-size: 0.5rem;
+        }
+        footer .logo{
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        footer .logo img{
+            width: 100%;
+        }
+        footer hr{
+            border-color: rgba(239,234,227,.3);
+        }
+        footer .links{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5em 0;
+            font-size: 0.5rem;
+            color: #ffffffd8;
+        }
+        footer .links a{
+            text-decoration: none;
+            color: #ffffffd8;
+            position: relative;
+        }
+        footer .links a::after{
+            content: "";
+            position: absolute;
+            /* to access this styles from javascript we have write in this format, --afterwidth is variable and 0 is value */
+            width: var(--afterwidth,0);
+            height: 2px;
+            background-color: #fff;
+            bottom: -2px;
+            left: var(--afterleft,unset);
+            right: var(--afterright,0);
+            transition: width 0.5s;
+        }
+
+        footer .links a:hover::after{
+            right:unset;
+            left: 0;
+            width: 100%;
+        }
+    </style>

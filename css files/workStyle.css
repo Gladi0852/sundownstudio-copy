@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    display: var(--displayblock,block);
+}
+html{
+    font-size: 2vw;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+}
+#main{
+    position: relative;
+    z-index: 9;
+    background-color: #EFEAE3;
+}
+nav{
+    z-index: 99;
+    position: relative;
+    background-color: transparent;
+}
+#header{
+    width: 100%;
+    z-index: 9;
+    position: relative;
+}
+#header .page1-content{
+    padding: 3em 1em 0 1em;
+    overflow: hidden;
+}
+#header .page1-content h1{
+    font-size: 4.9rem;
+}
+#sticky{
+    padding: 0 1em 3em 1em;
+    width: 100%;
+    position: sticky;
+    top: 3%;
+    z-index: 10;
+    overflow: hidden;
+}
+#sticky .type-tab{
+    display: flex;
+    gap: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #efeae399;
+    backdrop-filter: blur(10px);
+    padding: 0.5em;
+    width: fit-content;
+    border-radius: 10em;
+    cursor: pointer;
+}
+#sticky .type-tab p{
+    font-size: 0.4rem;
+}
+
+/* ------------------------------body content start--------------------------- */
+#body-content{
+    width: 100%;
+    height: max-content;
+    z-index: 9;
+    position: relative;
+    padding: 0 3em 5em 3em;
+}
+#body-content .projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#body-content .projects .tab{
+    position: relative;
+    width: 11.5em;
+    /* height: 11.5em; */
+    /* height: 14.8em; */
+    /* height: 7.8em; */
+    border-radius: 0.5em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    align-self: center;
+    margin: 2em 0;
+    /* opacity: 0; */
+    /* top : 200px; */
+    cursor: pointer;
+}
+
+#body-content .projects .tab .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 4;
+    transition: scale 0.5s;
+}
+#body-content .projects .tab:hover .overlay{
+    scale: 1.1;
+}
+#body-content .projects .tab .overlay img,#body-content .projects .tab .overlay video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(80%);
+}
+#body-content .projects .tab .proj-heading{
+    position: relative;
+    z-index: 5;
+    padding-bottom: 1em;
+}
+#body-content .projects .tab .proj-heading h3{
+    font-size: 0.8rem;
+    color: #fff;
+    text-align: center;
+}
+#body-content .projects .tab .proj-heading p{
+    font-size: 0.5rem;
+    color: #efeae3ab;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#body-content .projects .tab .proj-heading p i{
+    font-size: 0.2rem;
+    margin: 0 1em;
+}
+/* -----------------------------animation page---------------------------------- */
+
+#anime-page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* height: 100vh; */
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    padding-bottom: 5em;
+}
+#anime-page .anime1{
+    position: sticky;
+    top: 8%;
+    width: 20em;
+    height: 20em;
+    background-color: #ff7214;
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: animeWrapper1-anime1 5s linear infinite alternate;
+}
+#anime-page .anime2{
+    width: 95%;
+    height: 95%;
+    background-color: #FE330A;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+@keyframes animeWrapper1-anime1 {
+    from{
+        transform: translate(15%,-10%) skew(5deg);
+    }
+    to{
+        transform: translate(-15%,15%) skew(-10deg);
+    }
+}
+/* ----------------------------------footer page :start---------------------------------- */
+#footer-page{
+    width: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: 5;
+}
